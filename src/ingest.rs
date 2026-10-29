@@ -148,7 +148,7 @@ fn decode_zip(bytes: &[u8]) -> Result<Vec<DecodedAdf>> {
         if !entry.is_file() {
             continue;
         }
-        let entry_name = entry.name().to_string();
+        let entry_name = entry.name()?.to_string();
         let lower = entry_name.to_ascii_lowercase();
         let mut data = Vec::new();
         if lower.ends_with(".adf") {

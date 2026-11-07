@@ -43,7 +43,7 @@ jobs:
           echo "asset=$asset" >> "$GITHUB_OUTPUT"
 
       - name: Install cosign
-        uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6 # v4.1.2
+        uses: sigstore/cosign-installer@756fe2d284c7292c4e9b62c8a28f1e5629c59532 # v4.1.3
 
       # Keyless sign-blob: a bundle carries the signature, the Fulcio cert, and the
       # Rekor transparency-log entry — verifiable with `cosign verify-blob --bundle`.
@@ -104,7 +104,7 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Install cosign
-        uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6 # v4.1.2
+        uses: sigstore/cosign-installer@756fe2d284c7292c4e9b62c8a28f1e5629c59532 # v4.1.3
 
       # Sign the multi-arch manifest by immutable digest (not tag); the :version and
       # :latest tags resolve to this digest, so tag-based verification works too.
